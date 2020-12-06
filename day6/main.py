@@ -1,11 +1,11 @@
 
 
 def  day6_1(l):
-    return len(list(dict.fromkeys(l)))
+    return len(dict.fromkeys(l))
 
 def day6_2(data):
-    common = list(set.intersection(*map(set, [l for l in data])))
-    return len(common)
+    return len(set.intersection(*map(set, data)))
+
 
 
 if __name__ == "__main__":
