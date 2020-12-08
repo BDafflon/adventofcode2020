@@ -1,4 +1,5 @@
 import copy
+import time
 
 def acc(value,i,accu):
     return accu+value,i+1
@@ -22,7 +23,7 @@ def day8_2_process(data,i,accu):
     if len(data)<=i:
         return accu
     else :
-        if data[i][2] == 1:
+        if data[i][2] == 2:
             return None
         else :
             data[i][2]+=1
@@ -34,12 +35,13 @@ def swap(data,i):
     swapNotDone = True
 
     while swapNotDone:
-        if data[i][0]=='jmp':
-            data[i][0]='nop'
-            return i+1
-        if data[i][0]=='nop':
-            data[i][0]='jmp'
-            return i+1
+        if data[i][2]==1:
+            if data[i][0]=='jmp':
+                data[i][0]='nop'
+                return i+1
+            if data[i][0]=='nop':
+                data[i][0]='jmp'
+                return i+1
         i+=1
     return -1
 
@@ -64,12 +66,18 @@ if __name__ == '__main__':
     fichier = open('input.txt', 'r')
     linesDeMonFichier = fichier.read().splitlines()
 
+
     data = [ [i.split(" ")[0],int(i.split(" ")[1]),0] for i in linesDeMonFichier]
+
+
     accu = day8_1(data,0,0)
     print('part1 :',accu)
 
-    data = [[i[0],i[1],0] for i in data]
+    tic = time.perf_counter()
     print('part2 :',day8_2(data,0))
+    toc = time.perf_counter()
+    print("time ",toc-tic)
+
 
 
 
