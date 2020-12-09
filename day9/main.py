@@ -1,10 +1,9 @@
 
 def check_number(data,n):
-    for i in data:
-        for j in data:
-            if i!=j:
-                if n == i+j:
-                    return True
+    for i in range(0,len(data)):
+        for j in range(i,len(data)):
+            if n == data[i]+data[j]:
+                return True
     return False
 
 def day9_1(data):
