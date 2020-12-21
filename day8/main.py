@@ -61,6 +61,10 @@ def day8_2(data,i):
 
 
 
+
+
+
+
 # main
 if __name__ == '__main__':
     fichier = open('input.txt', 'r')
@@ -73,11 +77,8 @@ if __name__ == '__main__':
     accu = day8_1(data,0,0)
     print('part1 :',accu)
 
-    tic = time.perf_counter()
     print('part2 :',day8_2(data,0))
-    toc = time.perf_counter()
-    print("time ",toc-tic)
-
+    
 
 
 

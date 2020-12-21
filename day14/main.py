@@ -29,6 +29,7 @@ def day14_2(data):
 
 
 
+
 def day14_1(data):
     registre = {}
     for d in data:
