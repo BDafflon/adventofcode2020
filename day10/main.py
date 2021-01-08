@@ -1,3 +1,5 @@
+
+
 def day10_2(data,buit_in):
     #https://math.stackexchange.com/questions/284700/maximum-number-of-path-for-acyclic-graph-with-start-and-end-node
     path = [[j, 0] for j in data]
@@ -22,7 +24,7 @@ if __name__ == '__main__':
 
     data =  [0]+[int(i) for i in lignes]
     data.sort()
-
+    print(data)
     built_in = data[len(data)-1]+3
 
     print(day10_1(data,built_in))
